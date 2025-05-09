@@ -39,14 +39,21 @@ function UseCallbackComp() {
         {
             err && <p>{err}</p>
         }
-        <ul>
+        <ul id="skill-list" >
         {
-            skill.map((ski,index)=>(
-                    <li id='skill-number-idx'  key={index} style={{display:'flex', alignItems: 'center', gap: '10px'}} >
-                        <p id='skill-number-idx'>{ski}</p>
-                    <button id="skill-del-btn" onClick={()=>handleDel(index)} >Del</button>
+            skill.length>0?(
+                skill.map((ski,idx)=>(
+                    // <li id='skill-number-idx'  key={index} style={{display:'flex', alignItems: 'center', gap: '10px'}} >
+                    //     <p id='skill-number-idx'>{ski}</p>
+                    // <button id="skill-del-btn" onClick={()=>handleDel(index)} >Del</button>
+                    // </li>
+                    <li key={idx} id={`skill-number-${idx}`} onClick={()=>handleDel(idx)} >
+                        {ski}
                     </li>
             ))
+            ):(
+                <li id="empty-skill">No skills available</li> // Ensure ul always has content
+            )
         }
         </ul>
     </div>
