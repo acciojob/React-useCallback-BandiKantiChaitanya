@@ -35,7 +35,7 @@ function UseCallbackComp() {
     <div>
         <h1 id="heading">Skills</h1>
         <input type="text" id="skill-input" value={input}  onChange={(e)=>{setInput(e.target.value)}} />
-        <button id="skill-add-btn" onClick={handleAdd} >Add</button>
+        <button id="skill-add-btn" onClick={handleAdd} >Add Skill</button>
         {
             err && <p>{err}</p>
         }
